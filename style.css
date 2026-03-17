@@ -219,12 +219,11 @@ em { font-style: italic; }
 }
 
 .header__logo {
-  font-family: var(--font-serif);
-  font-size: 1.25rem;
-  font-weight: 500;
-  color: var(--text);
-  letter-spacing: 0.02em;
+  display: flex;
+  align-items: center;
+  gap: 10px;
   flex-shrink: 0;
+  text-decoration: none;
 }
 .header__logo span { color: var(--accent); }
 
@@ -1265,3 +1264,242 @@ em { font-style: italic; }
   .site-header, .site-footer, .cta-section, .hero { display: none; }
   body { color: #000; }
 }
+
+/* ── Logo image (header & footer) ────────────────────────── */
+.header__logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+}
+.header__logo-img {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  object-fit: cover;
+  flex-shrink: 0;
+  border: 1.5px solid var(--border);
+}
+.header__logo-text {
+  font-family: var(--font-serif);
+  font-size: 1.2rem;
+  font-weight: 500;
+  color: var(--text);
+  letter-spacing: 0.02em;
+  line-height: 1.1;
+}
+.header__logo-text span { color: var(--accent); }
+
+.footer__logo-link {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  text-decoration: none;
+  margin-bottom: 12px;
+}
+.footer__logo-img {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  object-fit: cover;
+  flex-shrink: 0;
+  border: 1.5px solid rgba(255,255,255,0.2);
+}
+.footer__logo-link .logo { margin-bottom: 0; }
+
+/* ── Header book button ───────────────────────────────────── */
+.header__book-btn {
+  display: none;
+  padding: 8px 16px;
+  font-size: 0.78rem;
+}
+@media (min-width: 640px) {
+  .header__book-btn { display: inline-flex; }
+}
+
+/* ── Prices / Services grid ───────────────────────────────── */
+.price-cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+}
+@media (min-width: 600px) { .price-cards { grid-template-columns: repeat(3, 1fr); } }
+@media (min-width: 900px) { .price-cards { grid-template-columns: repeat(4, 1fr); gap: 18px; } }
+
+.price-card {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 22px 14px;
+  text-align: center;
+  transition: transform .2s, box-shadow .2s;
+}
+.price-card:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow);
+}
+.price-card__icon {
+  width: 48px;
+  height: 48px;
+  margin: 0 auto 12px;
+  background: var(--accent-light);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--cta);
+}
+.price-card__icon svg { width: 22px; height: 22px; }
+.price-card__service {
+  font-family: var(--font-serif);
+  font-size: 1rem;
+  font-weight: 500;
+  margin-bottom: 5px;
+  color: var(--text);
+}
+.price-card__desc {
+  font-size: 0.78rem;
+  color: var(--text-muted);
+  margin-bottom: 10px;
+  line-height: 1.5;
+}
+.price-card__price {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--cta);
+}
+.price-disclaimer {
+  text-align: center;
+  font-size: 0.82rem;
+  color: var(--text-muted);
+  margin-top: 28px;
+  padding: 14px 20px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--surface);
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* ── Booking modal (Altegio) ──────────────────────────────── */
+.booking-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 9000;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  background: rgba(61,53,48,0.75);
+  padding: 16px;
+  backdrop-filter: blur(4px);
+}
+.booking-modal.open { display: flex; }
+.booking-modal__inner {
+  background: var(--white);
+  border-radius: var(--radius-lg);
+  width: 100%;
+  max-width: 1020px;
+  max-height: 92vh;
+  overflow: hidden;
+  position: relative;
+  box-shadow: var(--shadow-lg);
+  display: flex;
+  flex-direction: column;
+}
+.booking-modal__head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 20px;
+  border-bottom: 1px solid var(--border);
+  flex-shrink: 0;
+}
+.booking-modal__head h3 {
+  font-family: var(--font-serif);
+  font-size: 1.15rem;
+  font-weight: 500;
+}
+.booking-modal__close {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-muted);
+  transition: background .2s, color .2s;
+  flex-shrink: 0;
+  font-size: 1.2rem;
+  line-height: 1;
+}
+.booking-modal__close:hover { background: var(--border); color: var(--text); }
+.booking-modal__frame {
+  flex: 1;
+  overflow: hidden;
+}
+.booking-modal__frame iframe {
+  display: block;
+  width: 100%;
+  height: 100%;
+  min-height: 500px;
+  border: none;
+}
+
+/* ── How to find us map block ─────────────────────────────── */
+.find-us-grid {
+  display: grid;
+  gap: 32px;
+  align-items: start;
+}
+@media (min-width: 768px) {
+  .find-us-grid { grid-template-columns: 1fr 1.4fr; gap: 48px; }
+}
+.find-us__info h2 { margin-bottom: 12px; }
+.find-us__info .divider { margin: 12px 0 20px; }
+.find-us__detail {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  margin-bottom: 14px;
+  font-size: 0.92rem;
+  color: var(--text-muted);
+}
+.find-us__detail svg {
+  width: 18px;
+  height: 18px;
+  color: var(--accent);
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+.find-us__detail a { color: var(--cta); font-weight: 700; }
+.find-us__detail a:hover { text-decoration: underline; }
+.find-us__map {
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow);
+}
+.find-us__map iframe {
+  display: block;
+  width: 100%;
+  height: 380px;
+  border: none;
+}
+.find-us__map-btn {
+  display: block;
+  text-align: center;
+  padding: 12px;
+  background: var(--surface);
+  border-top: 1px solid var(--border);
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: var(--cta);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  transition: background .2s;
+}
+.find-us__map-btn:hover { background: var(--border); }
