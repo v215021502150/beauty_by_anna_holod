@@ -1,0 +1,14 @@
+# macOS
+.DS_Store
+**/.DS_Store
+.AppleDouble
+.LSOverride
+
+# Working files (not needed on GitHub Pages)
+instagramm/
+favicon-pack/
+
+# Editor
+.vscode/
+.idea/
+*.swp
