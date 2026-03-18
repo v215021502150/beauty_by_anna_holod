@@ -94,45 +94,7 @@
     }
   });
 
-  /* ── Booking modal (Altegio) ───────────────────────────── */
-  var modal = document.getElementById('booking-modal');
-  var modalFrame = document.getElementById('booking-modal-frame');
-
-  function openBooking() {
-    if (!modal) return;
-    if (modalFrame && !modalFrame.src) {
-      modalFrame.src = 'https://n35630.alteg.io';
-    }
-    modal.classList.add('open');
-    document.body.style.overflow = 'hidden';
-  }
-
-  function closeBooking() {
-    if (!modal) return;
-    modal.classList.remove('open');
-    document.body.style.overflow = '';
-  }
-
-  document.querySelectorAll('[data-open-booking]').forEach(function (el) {
-    el.addEventListener('click', function (e) {
-      e.preventDefault();
-      openBooking();
-    });
-  });
-
-  var closeBtn = document.getElementById('booking-modal-close');
-  if (closeBtn) closeBtn.addEventListener('click', closeBooking);
-
-  if (modal) {
-    modal.addEventListener('click', function (e) {
-      if (e.target === modal) closeBooking();
-    });
-    document.addEventListener('keydown', function (e) {
-      if (e.key === 'Escape') closeBooking();
-    });
-  }
-
-  /* ── Init ──────────────────────────────────────────────── */
+/* ── Init ──────────────────────────────────────────────── */
   applyLang(lang);
 
 }());
