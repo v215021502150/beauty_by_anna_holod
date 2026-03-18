@@ -2,4 +2,4 @@ User-agent: *
 Allow: /
 Disallow: /instagramm/
 
-Sitemap: https://beautybyanna.com/sitemap.xml
+Sitemap: https://beauty-by-anna-holod.com/sitemap.xml
