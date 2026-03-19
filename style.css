@@ -1503,3 +1503,312 @@ em { font-style: italic; }
   transition: background .2s;
 }
 .find-us__map-btn:hover { background: var(--border); }
+
+/* ════════════════════════════════════════════════════════════
+   ENHANCEMENTS v2 — Animation · Interaction · Mobile CTA
+   ════════════════════════════════════════════════════════════ */
+
+/* ── #1 Hero fade-up on page load ────────────────────────── */
+@media (prefers-reduced-motion: no-preference) {
+  @keyframes heroFadeUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+  .hero__content .breadcrumb { animation: heroFadeUp .5s ease .05s  both; }
+  .hero__tag                 { animation: heroFadeUp .6s ease .15s  both; }
+  .hero__title               { animation: heroFadeUp .65s ease .28s both; }
+  .hero__subtitle            { animation: heroFadeUp .65s ease .44s both; }
+  .hero__content .btn-group  { animation: heroFadeUp .6s ease .58s  both; }
+}
+
+/* ── #8 Header: shrink + stronger blur on scroll ─────────── */
+.header__inner {
+  transition: height .3s ease;
+}
+.site-header.scrolled .header__inner {
+  height: 54px;
+}
+.site-header.scrolled {
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  box-shadow: 0 2px 20px rgba(61,53,48,0.11);
+}
+
+/* Desktop nav: underline instead of background ─── */
+@media (min-width: 900px) {
+  .site-nav a {
+    position: relative;
+    background: transparent;
+  }
+  .site-nav a::after {
+    content: '';
+    position: absolute;
+    bottom: 2px;
+    left: 50%;
+    right: 50%;
+    height: 1.5px;
+    background: var(--cta);
+    border-radius: 1px;
+    transition: left .25s ease, right .25s ease;
+  }
+  .site-nav a:hover,
+  .site-nav a.active {
+    background: transparent;
+    color: var(--cta);
+  }
+  .site-nav a:hover::after,
+  .site-nav a.active::after {
+    left: 8px;
+    right: 8px;
+  }
+}
+
+/* ── #9 Typography refinements ───────────────────────────── */
+body { line-height: 1.82; }
+h2   { letter-spacing: -0.01em; }
+h3   { letter-spacing: 0.01em; }
+.section__header { margin-bottom: 52px; }
+
+/* ── #3 Enhanced service card hover ──────────────────────── */
+.service-card {
+  transition: transform .3s ease, box-shadow .3s ease;
+}
+.service-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 16px 48px rgba(61,53,48,0.13);
+}
+.service-card__link {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+.service-card__link::after {
+  content: '→';
+  display: inline-block;
+  transition: transform .2s ease;
+}
+.service-card:hover .service-card__link::after {
+  transform: translateX(4px);
+}
+
+/* ── #5 Feature item hover ───────────────────────────────── */
+.feature-item {
+  padding: 28px 20px;
+  border-radius: var(--radius-lg);
+  background: var(--white);
+  border: 1px solid transparent;
+  transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease;
+}
+.feature-item:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow);
+  border-color: var(--border);
+}
+.feature-item__icon {
+  transition: transform .3s ease;
+}
+.feature-item:hover .feature-item__icon {
+  transform: scale(1.12);
+}
+
+/* ── #6 Review card hover ────────────────────────────────── */
+.review-card {
+  transition: transform .25s ease, box-shadow .25s ease;
+}
+.review-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lg);
+}
+
+/* ── Info card hover ─────────────────────────────────────── */
+.info-card {
+  transition: transform .25s ease, box-shadow .25s ease;
+}
+.info-card:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow);
+}
+
+/* ── #4 Price card ───────────────────────────────────────── */
+.price-card {
+  padding: 26px 16px;
+  transition: transform .25s ease, box-shadow .25s ease;
+}
+.price-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 36px rgba(61,53,48,0.11);
+}
+.price-card__price {
+  font-size: 1.15rem;
+}
+
+/* ── #7 Gallery: zoom + overlay ──────────────────────────── */
+.gallery-item {
+  position: relative;
+  border-radius: var(--radius-lg);
+}
+.gallery-item img {
+  transition: transform .45s ease;
+}
+.gallery-item:hover img {
+  transform: scale(1.05);
+}
+.gallery-item::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(61,53,48,0);
+  border-radius: inherit;
+  transition: background .3s ease;
+  pointer-events: none;
+}
+.gallery-item:hover::after {
+  background: rgba(61,53,48,0.22);
+}
+
+/* ── #11 Button active state ─────────────────────────────── */
+.btn:active {
+  transform: scale(0.96) !important;
+  box-shadow: none !important;
+}
+
+/* ── #12 FAQ smooth animation ────────────────────────────── */
+.faq-item__q {
+  transition: background .2s ease, color .2s ease;
+}
+.faq-item__q:hover {
+  background: var(--surface);
+}
+.faq-item.open .faq-item__q {
+  color: var(--cta);
+  border-bottom: 1px solid var(--border);
+}
+/* Override display:none with max-height animation */
+.faq-item__a {
+  display: block;
+  border-top: none;
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  padding: 0 20px;
+  transition: max-height .4s ease, opacity .28s ease .06s, padding .3s ease;
+}
+.faq-item.open .faq-item__a {
+  max-height: 480px;
+  opacity: 1;
+  padding: 16px 20px 20px;
+}
+
+/* ── #2 Stagger animations for grid children ─────────────── */
+@media (prefers-reduced-motion: no-preference) {
+  /* Grid containers: skip container animation, stagger children */
+  .features-grid.reveal,
+  .info-grid.reveal,
+  .reviews-grid.reveal,
+  .price-cards.reveal,
+  .gallery-grid.reveal,
+  .related-grid.reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+  /* Children start hidden */
+  .reveal .feature-item,
+  .reveal .info-card,
+  .reveal .review-card,
+  .reveal .price-card,
+  .reveal .gallery-item,
+  .reveal .related-card {
+    opacity: 0;
+    transform: translateY(18px);
+    transition: opacity .5s ease, transform .5s ease;
+  }
+  /* Animate in when parent visible */
+  .reveal.visible .feature-item,
+  .reveal.visible .info-card,
+  .reveal.visible .review-card,
+  .reveal.visible .price-card,
+  .reveal.visible .gallery-item,
+  .reveal.visible .related-card {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  /* Stagger delays for up to 8 children */
+  .reveal.visible > *:nth-child(1) { transition-delay: 0ms; }
+  .reveal.visible > *:nth-child(2) { transition-delay: 80ms; }
+  .reveal.visible > *:nth-child(3) { transition-delay: 160ms; }
+  .reveal.visible > *:nth-child(4) { transition-delay: 240ms; }
+  .reveal.visible > *:nth-child(5) { transition-delay: 320ms; }
+  .reveal.visible > *:nth-child(6) { transition-delay: 400ms; }
+  .reveal.visible > *:nth-child(7) { transition-delay: 480ms; }
+  .reveal.visible > *:nth-child(8) { transition-delay: 560ms; }
+}
+
+/* ── #14 Mobile CTA bar ──────────────────────────────────── */
+.mobile-cta {
+  display: none;
+}
+
+@media (max-width: 767px) {
+  .mobile-cta {
+    display: flex;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 900;
+    background: var(--white);
+    border-top: 1px solid var(--border);
+    box-shadow: 0 -2px 16px rgba(61,53,48,0.09);
+    padding: 8px 12px;
+    padding-bottom: calc(8px + env(safe-area-inset-bottom, 0px));
+    gap: 8px;
+    align-items: stretch;
+  }
+  body {
+    padding-bottom: 68px;
+  }
+}
+
+.mobile-cta__btn {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 3px;
+  padding: 7px 4px;
+  border-radius: var(--radius);
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  background: transparent;
+  transition: background .15s, color .15s, transform .12s;
+  text-decoration: none;
+  -webkit-tap-highlight-color: transparent;
+}
+.mobile-cta__btn svg {
+  width: 22px;
+  height: 22px;
+  flex-shrink: 0;
+}
+.mobile-cta__btn:active {
+  transform: scale(0.93);
+}
+.mobile-cta__btn--wa {
+  color: #1fba59;
+}
+.mobile-cta__btn--wa:active {
+  background: rgba(31,186,89,0.08);
+}
+.mobile-cta__btn--primary {
+  background: var(--cta);
+  color: var(--white);
+  border-radius: var(--radius-lg);
+  flex: 1.4;
+}
+.mobile-cta__btn--primary:active {
+  background: var(--cta-hover);
+}

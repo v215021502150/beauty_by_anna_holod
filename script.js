@@ -75,7 +75,7 @@
           io.unobserve(e.target);
         }
       });
-    }, { threshold: 0.12 });
+    }, { threshold: 0.08 });
 
     document.querySelectorAll('.reveal').forEach(function (el) { io.observe(el); });
   } else {
