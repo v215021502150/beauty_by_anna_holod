@@ -67,7 +67,8 @@ beauty-by-anna-holod-com/
 ├── brows.html          — оформление бровей и ресниц
 ├── hair.html           — парикмахерские услуги
 ├── about.html          — о салоне
-├── contact.html        — контакты
+├── contact.html        — контакты (с схемой проезда + парковкой)
+├── go/index.html       — standalone-страница маршрута (для авто-подтверждений alteg.io, noindex)
 ├── style.css           — все стили
 ├── script.js           — JS: lang switcher + hamburger + FAQ + scroll reveal
 ├── sitemap.xml
@@ -100,7 +101,8 @@ beauty-by-anna-holod-com/
     ├── body-4.jpg        → коррекция фигуры
     ├── studio-1.jpg      → about, интерьер
     ├── about-studio.png  → ЗАМЕНЕНА: brows.html → brows.png, about.html → waxing-3.jpg
-    └── brows.png         → brows.html (брови)
+    ├── brows.png         → brows.html (брови)
+    └── parking.png       → схема парковки/маршрута (874×716) — используется на /go и contact.html
 ```
 
 ---
