@@ -47,11 +47,10 @@
 | Часы EN | Mon–Sat: 09:00–20:00 |
 | Часы RU | Пн–Сб: 09:00–20:00 |
 | Postal code | 3090 |
-| Google Maps embed | `https://maps.google.com/maps?q=34.687110,33.042150&z=17&output=embed` |
+| Google Maps embed | `https://maps.google.com/maps?q=Beauty+by+Anna+Holod,+Limassol&z=17&output=embed` (поиск по названию салона — Google сам ставит верную булавку из листинга) |
 | Google Maps link | `https://maps.app.goo.gl/JF5akiTY34X66T1S9` |
-| Координаты | lat: 34.687110, lon: 33.042150 (точные, декодированы из Plus Code M2PR+X8) |
-| Plus Code | M2PR+X8 Limassol, Cyprus |
-| Страница маршрута | `beauty-by-anna-holod.com/go` — короткая ссылка для авто-подтверждений alteg.io |
+| Координаты | lat: 34.6751, lon: 33.0441 (адресные, в JSON-LD; реальная булавка управляется через Google Business Profile) |
+| Страница маршрута | `beauty-by-anna-holod.com/go` — короткая ссылка для авто-подтверждений alteg.io. В embed и deep-links используется поиск по названию салона, не координаты |
 | Специалисты | Анна Холод (основательница, массаж, тело), Екатерина (волосы, колорист) |
 
 ---
