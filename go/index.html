@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="robots" content="noindex,nofollow">
+<meta name="theme-color" content="#FAF8F5">
+<title data-en="How to find us — Beauty by Anna Holod" data-ru="Как добраться — Beauty by Anna Holod">How to find us — Beauty by Anna Holod</title>
+<link rel="icon" type="image/x-icon" href="../images/favicon-pack/favicon.ico">
+<link rel="apple-touch-icon" sizes="180x180" href="../images/favicon-pack/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=Lato:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #FAF8F5;
+    --surface: #F5F0EA;
+    --border: #E8DDD0;
+    --text: #3D3530;
+    --text-muted: #8C7B70;
+    --accent: #C9A882;
+    --cta: #8B5E4A;
+    --cta-hover: #6B4535;
+    --white: #FFFFFF;
+    --wa: #25D366;
+    --wa-hover: #1FB855;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body { -webkit-font-smoothing: antialiased; }
+  body {
+    font-family: 'Lato', -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.5;
+    min-height: 100vh;
+    padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left);
+  }
+  h1, h2 { font-family: 'Cormorant Garamond', Georgia, serif; font-weight: 600; letter-spacing: -0.01em; }
+
+  .wrap { max-width: 720px; margin: 0 auto; padding: 16px 16px 32px; }
+
+  .topbar {
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 12px; margin-bottom: 16px;
+  }
+  .brand { display: flex; align-items: center; gap: 10px; text-decoration: none; color: var(--text); }
+  .brand img { width: 36px; height: 36px; border-radius: 50%; }
+  .brand-name { font-family: 'Cormorant Garamond', serif; font-size: 18px; font-weight: 600; line-height: 1.1; }
+  .brand-name span { display: block; font-size: 12px; color: var(--text-muted); font-family: 'Lato', sans-serif; font-weight: 400; letter-spacing: 0.04em; }
+
+  .lang { display: flex; gap: 2px; background: var(--surface); border-radius: 999px; padding: 3px; }
+  .lang button {
+    border: 0; background: transparent; padding: 6px 12px; border-radius: 999px;
+    font-size: 12px; font-weight: 700; letter-spacing: 0.04em; color: var(--text-muted);
+    cursor: pointer; font-family: inherit;
+  }
+  .lang button.active { background: var(--text); color: var(--bg); }
+
+  h1.title { font-size: 28px; line-height: 1.15; margin-bottom: 6px; }
+  .subtitle { color: var(--text-muted); font-size: 14px; margin-bottom: 18px; }
+
+  .address-card {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 14px 16px;
+    display: flex; align-items: center; gap: 12px;
+    margin-bottom: 16px;
+  }
+  .address-card svg { flex-shrink: 0; color: var(--cta); }
+  .address-card .addr-text { flex: 1; min-width: 0; }
+  .address-card .addr-line { font-size: 15px; font-weight: 700; }
+  .address-card .addr-sub { font-size: 12px; color: var(--text-muted); margin-top: 2px; }
+  .copy-btn {
+    flex-shrink: 0; border: 1px solid var(--border); background: var(--bg);
+    color: var(--text); padding: 8px 12px; border-radius: 8px;
+    font-size: 12px; font-weight: 700; cursor: pointer; font-family: inherit;
+    transition: background 0.15s, border-color 0.15s;
+  }
+  .copy-btn:hover { background: var(--surface); border-color: var(--accent); }
+  .copy-btn.done { background: var(--cta); color: var(--white); border-color: var(--cta); }
+
+  .map-wrap {
+    position: relative;
+    border-radius: 12px;
+    overflow: hidden;
+    border: 1px solid var(--border);
+    background: var(--surface);
+    margin-bottom: 14px;
+    aspect-ratio: 4 / 5;
+    max-height: 520px;
+  }
+  @media (min-width: 600px) { .map-wrap { aspect-ratio: 16 / 10; } }
+  .map-wrap iframe { width: 100%; height: 100%; border: 0; display: block; }
+
+  .nav-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+    margin-bottom: 28px;
+  }
+  @media (min-width: 600px) { .nav-grid { grid-template-columns: repeat(4, 1fr); } }
+
+  .nav-btn {
+    display: flex; flex-direction: column; align-items: center; justify-content: center;
+    gap: 6px; text-decoration: none; padding: 14px 8px;
+    background: var(--white); border: 1px solid var(--border); border-radius: 12px;
+    color: var(--text); font-size: 13px; font-weight: 700;
+    transition: transform 0.1s, border-color 0.15s, background 0.15s;
+    -webkit-tap-highlight-color: transparent;
+  }
+  .nav-btn:active { transform: scale(0.97); }
+  .nav-btn:hover { border-color: var(--accent); background: var(--surface); }
+  .nav-btn svg { width: 24px; height: 24px; color: var(--cta); }
+  .nav-btn.call { background: var(--cta); color: var(--white); border-color: var(--cta); }
+  .nav-btn.call svg { color: var(--white); }
+  .nav-btn.call:hover { background: var(--cta-hover); border-color: var(--cta-hover); }
+
+  section.block { margin-bottom: 26px; }
+  section.block h2 {
+    font-size: 22px; margin-bottom: 10px;
+    display: flex; align-items: center; gap: 10px;
+  }
+  section.block h2 svg { color: var(--cta); }
+  section.block p { color: var(--text); font-size: 15px; margin-bottom: 8px; }
+  section.block p.muted { color: var(--text-muted); font-size: 13px; }
+
+  .parking-img {
+    width: 100%; border-radius: 12px; border: 1px solid var(--border);
+    margin-top: 10px; display: block;
+  }
+  .parking-placeholder {
+    background: var(--surface);
+    border: 1px dashed var(--border);
+    border-radius: 12px;
+    padding: 28px 16px;
+    text-align: center;
+    color: var(--text-muted);
+    font-size: 13px;
+    margin-top: 10px;
+  }
+
+  .hours {
+    background: var(--surface);
+    border-radius: 12px;
+    padding: 12px 14px;
+    display: flex; align-items: center; gap: 10px;
+    font-size: 14px;
+  }
+  .hours svg { color: var(--cta); flex-shrink: 0; }
+
+  .footer-link {
+    text-align: center;
+    margin-top: 24px;
+    font-size: 13px;
+  }
+  .footer-link a {
+    color: var(--text-muted); text-decoration: none;
+    border-bottom: 1px solid var(--border); padding-bottom: 2px;
+  }
+  .footer-link a:hover { color: var(--text); border-color: var(--accent); }
+
+  .plus-code {
+    font-family: 'SF Mono', Menlo, Consolas, monospace;
+    font-size: 11px;
+    color: var(--text-muted);
+    letter-spacing: 0.05em;
+  }
+</style>
+</head>
+<body>
+  <div class="wrap">
+
+    <div class="topbar">
+      <a href="../index.html" class="brand">
+        <img src="../images/favicon-pack/apple-touch-icon.png" alt="Beauty by Anna Holod" width="36" height="36">
+        <div class="brand-name">
+          Beauty by Anna Holod
+          <span data-en="Limassol, Cyprus" data-ru="Лимассол, Кипр">Limassol, Cyprus</span>
+        </div>
+      </a>
+      <div class="lang" role="group" aria-label="Language">
+        <button type="button" class="active" data-lang="en">EN</button>
+        <button type="button" data-lang="ru">RU</button>
+      </div>
+    </div>
+
+    <h1 class="title" data-en="How to find us" data-ru="Как нас найти">How to find us</h1>
+    <p class="subtitle" data-en="Map, navigation and parking — everything you need." data-ru="Карта, навигация и парковка — всё что нужно.">Map, navigation and parking — everything you need.</p>
+
+    <div class="address-card">
+      <svg width="22" height="22" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M17.657 16.657L13.414 20.9a2 2 0 01-2.828 0l-4.243-4.243a8 8 0 1111.314 0z"/><circle cx="12" cy="11" r="3"/></svg>
+      <div class="addr-text">
+        <div class="addr-line" id="addr-en" data-en="Arch. Makarios III Ave 161" data-ru="просп. Архиепископа Макариоса III, 161">Arch. Makarios III Ave 161</div>
+        <div class="addr-sub" data-en="Limassol 3090, Cyprus" data-ru="Лимассол 3090, Кипр">Limassol 3090, Cyprus · <span class="plus-code">M2PR+X8</span></div>
+      </div>
+      <button type="button" class="copy-btn" id="copyBtn" data-en="Copy" data-ru="Копировать">Copy</button>
+    </div>
+
+    <div class="map-wrap">
+      <iframe
+        src="https://maps.google.com/maps?q=34.687110,33.042150&z=18&output=embed"
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"
+        title="Beauty by Anna Holod — Google Map"
+        allowfullscreen></iframe>
+    </div>
+
+    <div class="nav-grid">
+      <a class="nav-btn" href="https://www.google.com/maps/dir/?api=1&destination=34.687110,33.042150" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 2v4M12 18v4M2 12h4M18 12h4"/><circle cx="12" cy="12" r="4"/></svg>
+        <span data-en="Google Maps" data-ru="Google Maps">Google Maps</span>
+      </a>
+      <a class="nav-btn" href="https://maps.apple.com/?daddr=34.687110,33.042150&dirflg=d" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M3 11l18-8-8 18-2-8-8-2z"/></svg>
+        <span data-en="Apple Maps" data-ru="Apple Maps">Apple Maps</span>
+      </a>
+      <a class="nav-btn" href="https://waze.com/ul?ll=34.687110,33.042150&navigate=yes" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M21 12c0 5-4 8-9 8-1.5 0-3-.3-4-.8L4 21l1-3.5C3.7 16 3 14 3 12c0-5 4-9 9-9s9 4 9 9z"/><circle cx="9" cy="11" r="1" fill="currentColor"/><circle cx="15" cy="11" r="1" fill="currentColor"/></svg>
+        <span data-en="Waze" data-ru="Waze">Waze</span>
+      </a>
+      <a class="nav-btn call" href="tel:+35795167831">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+        <span data-en="Call" data-ru="Позвонить">Call</span>
+      </a>
+    </div>
+
+    <section class="block">
+      <h2>
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="6" width="18" height="14" rx="2"/><path stroke-linecap="round" d="M8 6V4M16 6V4M3 10h18"/></svg>
+        <span data-en="Parking" data-ru="Парковка">Parking</span>
+      </h2>
+      <p data-en="Free parking is available next to the building. See the map below for the exact spot — it's the closest entrance to the salon." data-ru="Бесплатная парковка прямо у здания. На схеме ниже отмечено где удобнее всего встать — это ближайший вход к салону.">
+        Free parking is available next to the building. See the map below for the exact spot — it's the closest entrance to the salon.
+      </p>
+      <div class="parking-placeholder" id="parkingFallback">
+        <span data-en="Parking diagram coming soon" data-ru="Схема парковки скоро появится">Parking diagram coming soon</span>
+      </div>
+      <img alt="Parking diagram" class="parking-img" id="parkingImg" style="display:none">
+    </section>
+
+    <section class="block">
+      <h2>
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M3 12l9-9 9 9M5 10v10a1 1 0 001 1h3v-6h6v6h3a1 1 0 001-1V10"/></svg>
+        <span data-en="At the building" data-ru="У здания">At the building</span>
+      </h2>
+      <p data-en="Look for the Beauty by Anna Holod sign at the entrance. The salon is located on Makarios Avenue — one of the main streets in Limassol — easy to spot once you're on the right block." data-ru="У входа табличка Beauty by Anna Holod. Салон находится на проспекте Макариоса — одна из главных улиц Лимассола — на нужном квартале сложно пропустить.">
+        Look for the Beauty by Anna Holod sign at the entrance. The salon is located on Makarios Avenue — one of the main streets in Limassol — easy to spot once you're on the right block.
+      </p>
+    </section>
+
+    <div class="hours">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path stroke-linecap="round" d="M12 8v4l3 2"/></svg>
+      <span data-en="Mon–Sat: 09:00–20:00" data-ru="Пн–Сб: 09:00–20:00">Mon–Sat: 09:00–20:00</span>
+    </div>
+
+    <div class="footer-link">
+      <a href="../index.html" data-en="← Back to website" data-ru="← На главную">← Back to website</a>
+    </div>
+
+  </div>
+
+<script>
+(function () {
+  var STORAGE_KEY = 'bbah_lang';
+  var saved = null;
+  try { saved = localStorage.getItem(STORAGE_KEY); } catch (e) {}
+  var browser = (navigator.language || 'en').slice(0, 2).toLowerCase();
+  var lang = saved || (browser === 'ru' ? 'ru' : 'en');
+
+  function applyLang(l) {
+    document.documentElement.lang = l;
+    var nodes = document.querySelectorAll('[data-en],[data-ru]');
+    for (var i = 0; i < nodes.length; i++) {
+      var n = nodes[i];
+      var val = n.getAttribute('data-' + l);
+      if (val !== null) n.textContent = val;
+    }
+    var btns = document.querySelectorAll('.lang button');
+    for (var j = 0; j < btns.length; j++) {
+      btns[j].classList.toggle('active', btns[j].getAttribute('data-lang') === l);
+    }
+    try { localStorage.setItem(STORAGE_KEY, l); } catch (e) {}
+  }
+
+  document.querySelectorAll('.lang button').forEach(function (b) {
+    b.addEventListener('click', function () { applyLang(b.getAttribute('data-lang')); });
+  });
+
+  applyLang(lang);
+
+  // Copy address
+  var copyBtn = document.getElementById('copyBtn');
+  copyBtn.addEventListener('click', function () {
+    var addrLine = document.getElementById('addr-en').textContent;
+    var fullAddr = addrLine + ', Limassol 3090, Cyprus';
+    var done = function () {
+      copyBtn.classList.add('done');
+      var prev = copyBtn.textContent;
+      copyBtn.textContent = document.documentElement.lang === 'ru' ? 'Готово' : 'Copied';
+      setTimeout(function () {
+        copyBtn.classList.remove('done');
+        copyBtn.textContent = document.documentElement.lang === 'ru' ? 'Копировать' : 'Copy';
+      }, 1800);
+    };
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(fullAddr).then(done).catch(function () {
+        var ta = document.createElement('textarea');
+        ta.value = fullAddr; document.body.appendChild(ta);
+        ta.select(); try { document.execCommand('copy'); } catch (e) {}
+        document.body.removeChild(ta); done();
+      });
+    } else {
+      var ta = document.createElement('textarea');
+      ta.value = fullAddr; document.body.appendChild(ta);
+      ta.select(); try { document.execCommand('copy'); } catch (e) {}
+      document.body.removeChild(ta); done();
+    }
+  });
+
+  // Try loading parking image — show only if file exists, otherwise keep placeholder
+  var pimg = document.getElementById('parkingImg');
+  var pfall = document.getElementById('parkingFallback');
+  var probe = new Image();
+  probe.onload = function () {
+    pimg.src = '../images/parking.jpg';
+    pimg.style.display = 'block';
+    pfall.style.display = 'none';
+  };
+  probe.src = '../images/parking.jpg';
+})();
+</script>
+</body>
+</html>

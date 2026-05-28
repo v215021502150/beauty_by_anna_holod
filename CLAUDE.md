@@ -47,9 +47,11 @@
 | Часы EN | Mon–Sat: 09:00–20:00 |
 | Часы RU | Пн–Сб: 09:00–20:00 |
 | Postal code | 3090 |
-| Google Maps embed | `https://maps.google.com/maps?q=Arch.+Makarios+III+161+Limassol+Cyprus&t=&z=16&ie=UTF8&iwloc=&output=embed` |
+| Google Maps embed | `https://maps.google.com/maps?q=34.687110,33.042150&z=17&output=embed` |
 | Google Maps link | `https://maps.app.goo.gl/JF5akiTY34X66T1S9` |
-| Координаты | lat: 34.6751, lon: 33.0441 |
+| Координаты | lat: 34.687110, lon: 33.042150 (точные, декодированы из Plus Code M2PR+X8) |
+| Plus Code | M2PR+X8 Limassol, Cyprus |
+| Страница маршрута | `beauty-by-anna-holod.com/go` — короткая ссылка для авто-подтверждений alteg.io |
 | Специалисты | Анна Холод (основательница, массаж, тело), Екатерина (волосы, колорист) |
 
 ---
